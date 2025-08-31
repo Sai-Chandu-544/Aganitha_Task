@@ -61,11 +61,7 @@ export default function App() {
     setLoading(false);
   };
 
-  const handleFavorite = (book) => {
-    if (!favorites.some((fav) => fav.key === book.key)) {
-      setFavorites([...favorites, book]);
-    }
-  };
+  
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -77,7 +73,7 @@ export default function App() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {books.map((book, i) => (
-            <BookCard key={i} book={book} onFavorite={handleFavorite} />
+            <BookCard key={i} book={book}  />
           ))}
         </div>
       )}
